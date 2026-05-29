@@ -1,20 +1,20 @@
 {
-  "name": "@m-breuer/rot13-reveal",
+  "name": "@marcel-breuer/rot13-reveal",
   "version": "0.0.14",
   "description": "Client-side ROT13 obfuscation and interaction-based reveal utility for imprint and GDPR pages.",
-  "homepage": "https://github.com/m-breuer/rot13-reveal#readme",
+  "homepage": "https://github.com/marcel-breuer/rot13-reveal#readme",
   "bugs": {
-    "url": "https://github.com/m-breuer/rot13-reveal/issues"
+    "url": "https://github.com/marcel-breuer/rot13-reveal/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/m-breuer/rot13-reveal.git"
+    "url": "git+https://github.com/marcel-breuer/rot13-reveal.git"
   },
   "license": "MIT",
   "author": {
     "name": "Marcel Breuer",
     "email": "breuer.marcel@outlook.com",
-    "url": "https://github.com/m-breuer"
+    "url": "https://github.com/marcel-breuer"
   },
   "type": "module",
   "engines": {

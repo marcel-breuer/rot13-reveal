@@ -1,11 +1,11 @@
-# @m-breuer/rot13-reveal
+# @marcel-breuer/rot13-reveal
 
 Client-side ROT13 obfuscation and interaction-triggered reveal utility.
 
 ROT13 is not encryption. This library is intended to reduce trivial automated harvesting in static markup.
 
-NPM: [@m-breuer/rot13-reveal](https://www.npmjs.com/package/@m-breuer/rot13-reveal)  
-Repository: [m-breuer/rot13-reveal](https://github.com/m-breuer/rot13-reveal)
+NPM: [@marcel-breuer/rot13-reveal](https://www.npmjs.com/package/@marcel-breuer/rot13-reveal)  
+Repository: [marcel-breuer/rot13-reveal](https://github.com/marcel-breuer/rot13-reveal)
 
 ## Features
 
@@ -24,7 +24,7 @@ Repository: [m-breuer/rot13-reveal](https://github.com/m-breuer/rot13-reveal)
 ## Install
 
 ```bash
-bun add @m-breuer/rot13-reveal
+bun add @marcel-breuer/rot13-reveal
 ```
 
 ## Quick Start
@@ -32,7 +32,7 @@ bun add @m-breuer/rot13-reveal
 ```html
 <div id="contact"></div>
 <script type="module">
-  import { mountRot13Reveal } from "@m-breuer/rot13-reveal";
+  import { mountRot13Reveal } from "@marcel-breuer/rot13-reveal";
 
   mountRot13Reveal(document.getElementById("contact"), "hello@example.com", {
     label: "Show contact",
@@ -91,7 +91,7 @@ Defaults:
 ## Usage
 
 ```ts
-import { mountRot13Reveal } from "@m-breuer/rot13-reveal";
+import { mountRot13Reveal } from "@marcel-breuer/rot13-reveal";
 
 mountRot13Reveal(document.getElementById("contact")!, "you@example.com", {
   label: "Show email",
