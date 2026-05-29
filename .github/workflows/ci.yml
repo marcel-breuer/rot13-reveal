@@ -55,6 +55,7 @@ jobs:
       with:
         node-version: "24"
         registry-url: "https://registry.npmjs.org"
+        package-manager-cache: false
 
     - name: Set up Bun
       uses: oven-sh/setup-bun@v2
@@ -80,6 +81,4 @@ jobs:
 
     - name: Publish package
       if: steps.package.outputs.published == 'false'
-      run: npm publish --access public --provenance
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: npm publish --access public
