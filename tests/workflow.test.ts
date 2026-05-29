@@ -18,6 +18,6 @@ describe("release workflow", () => {
 
   it("exposes an explicit npm publish script guarded by prepack checks", () => {
     expect(packageJson.scripts.prepack).toBe("bun run clean && bun run lint && bun run test && bun run build");
-    expect(packageJson.scripts["publish:npm"]).toBe("npm publish --access public --provenance");
+    expect(packageJson.scripts["publish:npm"]).toBe("npm publish --access public");
   });
 });
