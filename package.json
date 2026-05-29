@@ -1,5 +1,5 @@
 {
-  "name": "@marcel-breuer/rot13-reveal",
+  "name": "@m-breuer/rot13-reveal",
   "version": "0.0.14",
   "description": "Client-side ROT13 obfuscation and interaction-based reveal utility for imprint and GDPR pages.",
   "homepage": "https://github.com/marcel-breuer/rot13-reveal#readme",
@@ -45,7 +45,7 @@
     "test": "node ./node_modules/vitest/vitest.mjs run",
     "test:watch": "node ./node_modules/vitest/vitest.mjs",
     "prepack": "bun run clean && bun run lint && bun run test && bun run build",
-    "publish:npm": "npm publish --access public --provenance"
+    "publish:npm": "npm publish --access public"
   },
   "devDependencies": {
     "jsdom": "^28.0.0",
