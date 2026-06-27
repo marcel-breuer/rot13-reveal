@@ -1,0 +1,10 @@
+---
+description: Repository governance for coding agents
+alwaysApply: true
+---
+
+This repository is governed by the root `AGENTS.md`.
+
+Read `AGENTS.md` before implementation. Read any nearer local `AGENTS.md` files for touched paths. Use `.agent/skills/README.md` to identify relevant skills, then read only those skill files.
+
+Do not duplicate or override canonical rules in this adapter. Keep changes scoped, follow existing TypeScript package patterns, and keep final output concise.
