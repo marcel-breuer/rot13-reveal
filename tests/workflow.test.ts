@@ -16,6 +16,14 @@ describe("release workflow", () => {
     expect(workflow).not.toContain("NPM_TOKEN");
   });
 
+  it("avoids redundant and unnecessary workflow runs", () => {
+    expect(workflow).toContain("cancel-in-progress: true");
+    expect(workflow).toContain('paths-ignore:');
+    expect(workflow).toContain('bun install --frozen-lockfile');
+    expect(workflow).toContain('uses: actions/cache@v4');
+    expect(workflow).toContain('path: ~/.bun/install/cache');
+  });
+
   it("exposes an explicit npm publish script guarded by prepack checks", () => {
     expect(packageJson.scripts.prepack).toBe("bun run clean && bun run lint && bun run test && bun run build");
     expect(packageJson.scripts["publish:npm"]).toBe("npm publish --access public");
