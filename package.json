@@ -39,7 +39,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "build": "tsup src/index.ts --format esm,cjs --no-dts && tsc -p tsconfig.build.json --emitDeclarationOnly",
     "clean": "rimraf dist",
     "lint": "tsc --noEmit",
     "test": "node ./node_modules/vitest/vitest.mjs run",
@@ -52,7 +52,7 @@
     "jsdom": "^30.1.0",
     "rimraf": "^6.1.3",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.0",
+    "typescript": "^7.0.2",
     "vitest": "^5.0.1"
   }
 }
