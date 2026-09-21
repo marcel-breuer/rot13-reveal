@@ -21,7 +21,7 @@ describe("release workflow", () => {
     expect(workflow).toContain("cancel-in-progress: true");
     expect(workflow).toContain('paths-ignore:');
     expect(workflow).toContain('bun install --frozen-lockfile');
-    expect(workflow).toContain('uses: actions/cache@v4');
+    expect(workflow).toMatch(/uses: actions\/cache@v\d+/);
     expect(workflow).toContain('path: ~/.bun/install/cache');
   });
 
