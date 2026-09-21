@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 
 const workflow = readFileSync(".github/workflows/ci.yml", "utf8");
+const dependabot = readFileSync(".github/dependabot.yml", "utf8");
 const packageJson = JSON.parse(readFileSync("package.json", "utf8")) as {
   scripts: Record<string, string>;
 };
@@ -27,5 +28,17 @@ describe("release workflow", () => {
   it("exposes an explicit npm publish script guarded by prepack checks", () => {
     expect(packageJson.scripts.prepack).toBe("bun run clean && bun run lint && bun run test && bun run build");
     expect(packageJson.scripts["publish:npm"]).toBe("npm publish --access public");
+  });
+});
+
+describe("Dependabot configuration", () => {
+  it("runs daily dependency updates at midnight and assigns them", () => {
+    expect(dependabot).toContain("version: 2");
+    expect(dependabot).toContain('package-ecosystem: "bun"');
+    expect(dependabot).toContain('package-ecosystem: "github-actions"');
+    expect(dependabot).toContain('interval: "daily"');
+    expect(dependabot).toContain('time: "00:00"');
+    expect(dependabot).toContain('timezone: "Europe/Berlin"');
+    expect(dependabot.match(/marcel-breuer/g)).toHaveLength(2);
   });
 });
