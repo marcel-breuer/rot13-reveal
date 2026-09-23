@@ -32,11 +32,11 @@ describe("release workflow", () => {
 });
 
 describe("Dependabot configuration", () => {
-  it("runs daily dependency updates at midnight and assigns them", () => {
+  it("runs monthly dependency updates at midnight and assigns them", () => {
     expect(dependabot).toContain("version: 2");
     expect(dependabot).toContain('package-ecosystem: "bun"');
     expect(dependabot).toContain('package-ecosystem: "github-actions"');
-    expect(dependabot).toContain('interval: "daily"');
+    expect(dependabot.match(/interval: monthly/g)).toHaveLength(2);
     expect(dependabot).toContain('time: "00:00"');
     expect(dependabot).toContain('timezone: "Europe/Berlin"');
     expect(dependabot.match(/marcel-breuer/g)).toHaveLength(2);

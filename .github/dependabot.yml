@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "bun"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: monthly
       time: "00:00"
       timezone: "Europe/Berlin"
     assignees:
@@ -11,7 +11,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: monthly
       time: "00:00"
       timezone: "Europe/Berlin"
     assignees:
