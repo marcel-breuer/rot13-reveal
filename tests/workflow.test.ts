@@ -32,13 +32,17 @@ describe("release workflow", () => {
 });
 
 describe("Dependabot configuration", () => {
-  it("runs monthly dependency updates at midnight and assigns them", () => {
+  it("groups monthly version updates and assigns version and security PRs", () => {
     expect(dependabot).toContain("version: 2");
     expect(dependabot).toContain('package-ecosystem: "bun"');
     expect(dependabot).toContain('package-ecosystem: "github-actions"');
-    expect(dependabot.match(/interval: monthly/g)).toHaveLength(2);
+    expect(dependabot).toContain("multi-ecosystem-groups:");
+    expect(dependabot).toContain("all-dependencies:");
+    expect(dependabot.match(/interval: monthly/g)).toHaveLength(1);
     expect(dependabot).toContain('time: "00:00"');
     expect(dependabot).toContain('timezone: "Europe/Berlin"');
-    expect(dependabot.match(/marcel-breuer/g)).toHaveLength(2);
+    expect(dependabot.match(/multi-ecosystem-group: all-dependencies/g)).toHaveLength(2);
+    expect(dependabot.match(/applies-to: security-updates/g)).toHaveLength(2);
+    expect(dependabot.match(/marcel-breuer/g)).toHaveLength(3);
   });
 });
