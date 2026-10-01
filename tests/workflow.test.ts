@@ -40,7 +40,7 @@ describe("Dependabot configuration", () => {
     expect(dependabot).toContain("all-dependencies:");
     expect(dependabot.match(/interval: monthly/g)).toHaveLength(1);
     expect(dependabot).toContain('time: "00:00"');
-    expect(dependabot).toContain('timezone: "Europe/Berlin"');
+    expect(dependabot).toContain("timezone: Europe/Berlin");
     expect(dependabot.match(/multi-ecosystem-group: all-dependencies/g)).toHaveLength(2);
     expect(dependabot.match(/applies-to: security-updates/g)).toHaveLength(2);
     expect(dependabot.match(/marcel-breuer/g)).toHaveLength(3);
